@@ -161,8 +161,8 @@ body *{
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 40%;
+  width: 100vw;
+  height: 40vh;
   z-index: 90;
 }
 .top-text{
@@ -178,10 +178,10 @@ body *{
 }
 @media (max-width:800px) {
   .top img{
-    height: 25%;
+    height: 25vh;
   }
   .top-sub img{
-    height: 25%;
+    height: 25vh;
   }
   .top-text{
     top: 5vh;
@@ -234,8 +234,6 @@ body *{
    z-index: 200;
    width: 100vw;
    height: 40vh;
-   padding: 0;
-   margin: 0;
    object-fit: cover;
    object-position: 100% 0;
    animation-name: mymove1;
