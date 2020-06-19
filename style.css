@@ -1,0 +1,435 @@
+body{
+  position: relative;
+  margin: 0;
+  font-family: 'Courier','Meiryo UI','TsukuARdGothic-Regular','Hannotate SC','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+}
+body *{
+  padding: 0;
+  margin: 0;
+}
+#nav{
+  /* 通常は非表示 */
+  display: none;
+  /* 余白の調整 */
+  margin: 0 auto;
+  /* リストの幅を画面の半分に */
+  width: 60%;
+  /* リストを前面に */
+  z-index: 500;
+  /* bodyを基準に相対位置に */
+  position: fixed;
+  /* 右寄せ */
+  right: 0;
+  top: 0;
+}
+
+/* リスト */
+#nav ul{
+  /* 余計な隙間の削除 */
+  margin: 0;
+  padding: 0;
+  /* リストの前の「・」の削除 */
+  list-style-type: none;
+  /* バックカラー */
+  background-color: #509FD8;
+  /* フチどり */
+  border: 3px solid #fff;
+  border-radius: 10px;
+}
+#nav li{
+  /* 間隔調整 */
+  padding: 5px;
+
+  /* 仕切り(下線) */
+  border-bottom: 1px solid #fff;
+  /* 横幅に合わせたフォントサイズ */
+  font-size: 15px;
+}
+/* 画面幅が大きいPC閲覧用 */
+@media (min-width:750px) {
+  #nav{
+    width: 40%;
+  }
+  #nav li{
+    padding-right: 90px;
+    font-size: 25px;
+  }
+}
+/* メニューボタンを括ったタグaの設定 */
+#nav a{
+  /* 下線の取り消し */
+  text-decoration: none;
+  /* メニューバーの外、枠の内で反応するように */
+  display: block;
+  color: #fff;
+}
+/* メニューボタンのまわり */
+#btn{
+  /* 固定 */
+  position: fixed;
+  /* 画面の上側に */
+  z-index: 1000;
+  /* 右上からの座標指定 */
+  top: 20px;
+  right: 20px;
+  /* 丸み */
+  border-radius: 8px;
+  /* メニューボタンからの余白 */
+  padding: 20px;
+  /* 背景色 */
+  background-color: #0066FF;
+  /* カーソルを指に */
+  cursor: pointer;
+}
+@media (max-width:750px) {
+  #btn{
+    /* メニューボタンからの余白 */
+    padding: 10px;
+  }
+}
+
+/* ハンバーガーメニュー基礎 */
+/* メニューボタン */
+.menu-trigger,
+.menu-trigger span {
+  display: inline-block;
+  /* 変化するすべてのプロパティへ適用を0.4秒で */
+  transition: all .4s;
+  box-sizing: border-box;
+}
+.menu-trigger {
+  /* 基準の位置の設定 */
+  position: relative;
+  /* 画面幅の５％の大きさ */
+  width: 25px;
+  height: 25px;
+}
+/* メニューのバー一つ一つの設定 */
+.menu-trigger span {
+  /* 上で設定した基準位置からの相対位置の設定 */
+  position: absolute;
+  /* 左揃え */
+  left: 0;
+  width: 25px;
+  /* 画面幅の１％の高さ(.menu-triggerの20％) */
+  height: 5px;
+  /* バーの色 */
+  background-color: #fff;
+  /* バーの丸み */
+  border-radius: 10px;
+}
+/* 上のバー */
+.menu-trigger span:nth-of-type(1) {
+  /* 上に揃える */
+  top: 0;
+}
+/* ２番目(真ん中)のバー */
+.menu-trigger span:nth-of-type(2) {
+  /* 真ん中(１本のバーと１本分の間隔の後)に配置 */
+  top: 10px;
+}
+/* ３番目(下)のバー */
+.menu-trigger span:nth-of-type(3) {
+  /* 下に揃える */
+  bottom: 0;
+}
+/* ハンバーガーメニュー基礎ここまで */
+
+/* ハンバーガーメニュー動作 */
+/* JSでclass.menu-triggerにclass.activeを追加されたときの動き */
+.menu-trigger.active span:nth-of-type(1) {
+  /* −45°回転しながら下に下ろす */
+  /* Safari5で適用されるように */
+  -webkit-transform: translateY(10px) rotate(-45deg);
+  transform: translateY(10px) rotate(-45deg);
+}
+.menu-trigger.active span:nth-of-type(2) {
+  /* 真ん中は消えていく */
+  opacity: 0;
+}
+.menu-trigger.active span:nth-of-type(3) {
+  /* 45°回転しながら上に上がる */
+  /* Safari5で適用されるように */
+  -webkit-transform: translateY(-10px) rotate(45deg);
+  transform: translateY(-10px) rotate(45deg);
+}
+/* ハンバーガーメニュー動作ここまで */
+/*
+トップのヘッダー
+ */
+.top img{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  z-index: 90;
+}
+.top-text{
+  font-size: 40px;
+  color: #fff;
+  height: 40px;
+  z-index: 100;
+  position: fixed;
+  top: 15vh;
+  right: 0;
+  left: 0;
+  text-align: center;
+}
+@media (max-width:800px) {
+  .top img{
+    height: 25%;
+  }
+  .top-sub img{
+    height: 25%;
+  }
+  .top-text{
+    top: 5vh;
+  }
+}
+/*
+トップのサブヘッダー
+ */
+ @keyframes mymove1 {
+   0%{
+     width: 110vw;
+     height: 45vh;
+   }
+   100%{
+     width: 100vw;
+     height: 40vh;
+   }
+ }
+ @keyframes mymove1-2 {
+   0%{
+     width: 110vw;
+     height: 30vh;
+   }
+   100%{
+     width: 100vw;
+     height: 25vh;
+   }
+ }
+ @keyframes mymove2 {
+   0%{
+     height: 40vh;
+   }
+   100%{
+     height: 100vh;
+   }
+ }
+ @keyframes mymove2-2 {
+   0%{
+     height: 25vh;
+   }
+   100%{
+     height: 100vh;
+   }
+ }
+ .top-sub img{
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 200;
+   width: 100vw;
+   height: 40vh;
+   padding: 0;
+   margin: 0;
+   object-fit: cover;
+   object-position: 100% 0;
+   animation-name: mymove1;
+   animation-duration: 1s;
+ }
+ .top-sub .big-thumb{
+   display: block;
+   height: 100vh;
+   animation-name: mymove2;
+   animation-duration: 1s;
+ }
+ @media (max-width:800px) {
+   .top-sub img{
+     height: 25vh;
+     animation-name: mymove1-2;
+     animation-duration: 1s;
+   }
+   .big-thumb{
+     animation-name: mymove2-2;
+     animation-duration: 1s;
+   }
+ }
+ /*
+メインのサムネ
+  */
+.main{
+  text-align: center;
+  z-index: 50;
+  margin: 45vh auto 70px;
+}
+.main .left{
+  text-align: left;
+  font-size: 30px;
+  margin-left: 20px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  text-decoration: underline;
+}
+.thumbnail{
+  margin-top: -10px;;
+  display: flex;
+  flex-wrap: wrap;
+}
+.thumbnail p{
+  flex: 1;
+  justify-content: space-around;
+}
+.thumbnail img{
+  width: 30vw;
+  height: 30vw;
+}
+.border{
+  border: 1px solid #000;
+}
+.def-hide{
+  display: none;
+}
+@media (max-width:800px) {
+  .main{
+    margin-top: 30vh;
+  }
+  .illustrator img,.photoshop img,.web-design img{
+    width: 45vw;
+    height: 45vw;
+  }
+  .def-hide{
+    display: block;
+  }
+}
+/*
+フッター
+*/
+footer{
+  height: 50px;
+  width: 100%;
+  background-color: #C0DBF3;
+  opacity: 0.7;
+  position: relative;
+}
+footer .logo{
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+}
+footer a{
+  text-decoration: none;
+  color: inherit;
+}
+footer a:hover{
+  opacity: 1;
+}
+footer .copy{
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+}
+@media (max-width:800px) {
+  footer .logo{
+    font-size: 15px;
+    left: 5px;
+  }
+  footer .copy{
+    font-size: 8px;
+    right: 5px;
+  }
+}
+/* TOPへボタン */
+#page-top {
+    position: fixed;
+    z-index: 300;
+    bottom: 20px;
+    right: 20px;
+    font-size: 40px;
+}
+#page-top a {
+    background: #000;
+    opacity: 0.5;
+    text-decoration: none;
+    color: #fff;
+    width: 80px;
+    padding: 20px 0;
+    text-align: center;
+    display: block;
+    border-radius: 50%;
+}
+#page-top a:hover {
+    text-decoration: none;
+    opacity: 0.3;
+}
+@media (max-width:800px) {
+  #page-top {
+    font-size: 20px;
+  }
+  #page-top a {
+    width: 50px;
+    padding: 15px 0;
+  }
+}
+/* TOPへボタンここまで */
+/*
+詳細ページ共通
+*/
+@keyframes mymove3 {
+  0%{
+    height: 100vh;
+  }
+  100%{
+    height: 40vh;
+  }
+}
+@keyframes mymove3-2 {
+  0%{
+    height: 100vh;
+  }
+  100%{
+    height: 25vh;
+  }
+}
+.head-img img{
+  position: absolute;
+  top: -50vh;
+  left: 0;
+  z-index: 200;
+  width: 100vw;
+  height: 40vh;
+  padding: 0;
+  margin: 0;
+  object-fit: cover;
+  object-position: 100% 0;
+  animation-name: mymove3;
+  animation-duration: 1s;
+}
+.block{
+  text-align: center;
+  margin: 50vh auto 65px;
+}
+.block h2{
+  margin-top: 20px;
+}
+.block p{
+  padding: 15px;
+}
+.block img{
+  width: 80vw;
+  height: auto;
+  margin: 30px;
+}
+@media (max-width:800px) {
+  .head-img img{
+    height: 25%;
+    animation-name: mymove3-2;
+    animation-duration: 1s;
+  }
+  .block{
+    margin-top: 30vh;
+  }
+}
