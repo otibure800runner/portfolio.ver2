@@ -2,11 +2,18 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>ポートフォリオ：Photoshop＞クジラと星海</title>
     <link rel="stylesheet" href="style.css" type="text/css">
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet?20200619-1509">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="cocoen.min.css">
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="script.js"></script>
+    <script src="cocoen.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function(){
+      new Cocoen();
+      });
+    </script>
   </head>
   <body>
     <div id="nav">
@@ -20,9 +27,8 @@
         <li><a href=polygon.html>ポリゴン風</a></li>
         <li><a href=retouch.html>レタッチ</a></li>
         <li><a href=jk.html>特大JK</a></li>
-        <li><a href=minamo.html>水面の表現</a></li>
         <li><a href=wanko.html>ワンコジラ</a></li>
-        <li><a href=whale.html>クジラと星海</a></li>
+        <li class="selected"><a href=whale.html>クジラと星海</a></li>
         <li><a href=giant.html>迫る巨人</a></li>
         <li><a href=mizuiro.html>Bar水色</a></li>
         <li><a href=yuuzou.html>遊三Factory</a></li>
@@ -49,10 +55,13 @@
       <div class="block">
         <h2>クジラと星海</h2>
         <p>Photoshop</p>
-        <p><img src="image/参考用10-2.jpg" alt=""></p>
-        <p>AdobeのPhotoshopを使って、クジラを星海に泳がせてみました。</p>
-        <p><img src="image/参考用10.jpg" alt=""></p>
-        <p>こちらが完成した画像。<br>
+        <div class="container">
+          <div class="cocoen">
+            <img src="image/参考用10-2.jpg">
+            <img src="image/参考用10.jpg">
+          </div>
+        </div>
+        <p>AdobeのPhotoshopを使って、クジラを星海に泳がせてみました。<br>
         クジラの尾を様々な選択ツールで選択しマスキングして配置し、選択範囲をコピーして反転しグレーを乗算で乗せることで影を演出しています。<br>
         同じくマスキングした鳥を空に配置し、色彩調節した星空の写真を、マスクをぼかしながら星海に見えるよう配置しています。</p>
       </div>

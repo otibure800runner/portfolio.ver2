@@ -2,11 +2,18 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>ポートフォリオ：Photoshop＞特大JK</title>
     <link rel="stylesheet" href="style.css" type="text/css">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="cocoen.min.css">
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="script.js"></script>
+    <script src="cocoen.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function(){
+      new Cocoen();
+      });
+    </script>
   </head>
   <body>
     <div id="nav">
@@ -19,8 +26,7 @@
         <li><a href=shark.html>鮫模写</a></li>
         <li><a href=polygon.html>ポリゴン風</a></li>
         <li><a href=retouch.html>レタッチ</a></li>
-        <li><a href=jk.html>特大JK</a></li>
-        <li><a href=minamo.html>水面の表現</a></li>
+        <li class="selected"><a href=jk.html>特大JK</a></li>
         <li><a href=wanko.html>ワンコジラ</a></li>
         <li><a href=whale.html>クジラと星海</a></li>
         <li><a href=giant.html>迫る巨人</a></li>
@@ -49,7 +55,12 @@
       <div class="block">
         <h2>特大JK</h2>
         <p>Photoshop</p>
-        <p><img src="image/参考用7.jpg" alt=""></p>
+        <div class="container">
+          <div class="cocoen">
+            <img src="image/参考用7-2.jpg">
+            <img src="image/参考用7.jpg">
+          </div>
+        </div>
         <p>AdobeのPhotoshopを使って、簡単なコラージュを作成してみました。<br>
         様々な選択ツールで建物や女の子をマスキングして切り取り、配置したあとは特殊ブラシを使って建物を持ち上げたときのガレキを表現しています。<br>
         背景の空模様は、上手く塗りつぶせなかったのでグラデーションを乗せています。</p>
