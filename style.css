@@ -841,6 +841,19 @@ footer .copy{
 }
 
 /*
+DTP向けチラシ：サムネクリックで拡大表示
+*/
+.hide-image.dtp{
+  left: 15vw;
+}
+@media (max-width:800px) {
+  .hide-image.dtp{
+    top: 15vh;
+    left: 2vw;
+  }
+}
+
+/*
 フォトショ：画像切り替えスライダー
 */
 .cocoen{
