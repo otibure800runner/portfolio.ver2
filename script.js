@@ -319,7 +319,7 @@ $(function(){
   });
   $(".fullcolor,.hide-image").click(function(){
     $(".hide-image").fadeOut(200);
-    $(".fullcolor").removeClass("active");
+    $(".fullcolor").toggleClass("active");
   });
 
   //キャラ拡大表示
